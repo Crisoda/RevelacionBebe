@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revelación de Sexo - Gimena & Camilo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #fff8f0 0%, #FFFFFF 50%);
+            color: #333333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Confeti animado */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            top: -10px;
+            z-index: 1;
+            animation: fall linear infinite;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #A8D8FF 0%, #FFB7D5 100%);
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="3" fill="white" opacity="0.3"/></svg>');
+            background-size: 50px 50px;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            color: #FFFFFF;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            animation: bounceIn 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero p {
+            font-size: 1.4em;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 2;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Globos flotantes mejorados */
+        .balloon {
+            position: absolute;
+            animation: floatBalloon 8s ease-in-out infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .balloon:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+        
+        .balloon-blue-1 {
+            left: 5%;
+            bottom: -80px;
+            animation-delay: 0s;
+        }
+        
+        .balloon-pink-1 {
+            right: 5%;
+            bottom: -80px;
+            animation-delay: 1s;
+        }
+        
+        .balloon-blue-2 {
+            left: 15%;
+            bottom: -100px;
+            animation-delay: 2s;
+        }
+        
+        .balloon-pink-2 {
+            right: 15%;
+            bottom: -100px;
+            animation-delay: 3s;
+        }
+        
+        @keyframes floatBalloon {
+            0%, 100% { 
+                transform: translateY(0px) rotate(-5deg); 
+            }
+            25% {
+                transform: translateY(-40px) rotate(5deg);
+            }
+            50% { 
+                transform: translateY(-20px) rotate(-3deg); 
+            }
+            75% {
+                transform: translateY(-50px) rotate(7deg);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .card {
+            background: #FFFFFF;
+            border: 3px solid #D4B36A;
+            border-radius: 25px;
+            padding: 35px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(212, 179, 106, 0.3);
+            position: relative;
+            animation: slideIn 0.8s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 179, 106, 0.4);
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .card::before {
+            content: '✨';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            font-size: 2em;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        .card::after {
+            content: '✨';
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            font-size: 2em;
+            animation: sparkle 2s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3) rotate(180deg);
+                opacity: 0.5;
+            }
+        }
+        
+        .welcome-text {
+            font-size: 1.3em;
+            text-align: center;
+            line-height: 1.9;
+        }
+        
+        .parents-names {
+            text-align: center;
+            font-size: 1.8em;
+            color: #D4B36A;
+            margin: 20px 0;
+            font-weight: bold;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .event-info {
+            background: linear-gradient(to bottom, #fffbf7 0%, #FFFFFF 100%);
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            font-size: 1.15em;
+            animation: fadeIn 1s ease-out;
+            padding: 10px;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .info-item:hover {
+            background: rgba(212, 179, 106, 0.1);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .info-item svg {
+            margin-right: 15px;
+            flex-shrink: 0;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-10deg);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 18px 35px;
+            border-radius: 35px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 1.15em;
+            text-align: center;
+            transition: all 0.4s ease;
+            margin: 10px 5px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .button-pink {
+            background: linear-gradient(135deg, #FFB7D5 0%, #ff9fc4 100%);
+        }
+        
+        .button-pink:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 183, 213, 0.5);
+        }
+        
+        .button-blue {
+            background: linear-gradient(135deg, #A8D8FF 0%, #8cc8ff 100%);
+        }
+        
+        .button-blue:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(168, 216, 255, 0.5);
+        }
+        
+        .buttons-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .countdown {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #A8D8FF 0%, #FFB7D5 100%);
+            border-radius: 25px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+            animation: moveStripes 20s linear infinite;
+        }
+        
+        @keyframes moveStripes {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+        
+        .countdown h2 {
+            color: #FFFFFF;
+            font-size: 2.2em;
+            margin-bottom: 35px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .time-box {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 25px;
+            min-width: 110px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            animation: popIn 0.5s ease-out;
+            transition: transform 0.3s ease;
+        }
+        
+        .time-box:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .time-box .number {
+            font-size: 3.2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #A8D8FF 0%, #FFB7D5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: numberChange 0.5s ease;
+        }
+        
+        @keyframes numberChange {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
+        .time-box .label {
+            font-size: 1.1em;
+            color: #333333;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .teams {
+            display: flex;
+            gap: 25px;
+            margin: 35px 0;
+            flex-wrap: wrap;
+        }
+        
+        .team {
+            flex: 1;
+            min-width: 250px;
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+            color: #FFFFFF;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+            cursor: pointer;
+        }
+        
+        .team:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+        
+        .team::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: rotateGradient 4s linear infinite;
+        }
+        
+        @keyframes rotateGradient {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .team-blue {
+            background: linear-gradient(135deg, #A8D8FF 0%, #7cb8ff 100%);
+        }
+        
+        .team-pink {
+            background: linear-gradient(135deg, #FFB7D5 0%, #ff8fb8 100%);
+        }
+        
+        .team h3 {
+            font-size: 2.3em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+            animation: shake 3s ease-in-out infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-3deg);
+            }
+            75% {
+                transform: rotate(3deg);
+            }
+        }
+        
+        .team p {
+            font-size: 1.3em;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .team-icon {
+            margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .dress-code {
+            background: linear-gradient(to right, rgba(168, 216, 255, 0.1), rgba(255, 183, 213, 0.1));
+            border-left: 5px solid #D4B36A;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(212, 179, 106, 0.2);
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .question-mark {
+            display: inline-block;
+            animation: spin 4s linear infinite;
+            font-size: 1.5em;
+            margin: 0 10px;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #A8D8FF 0%, #FFB7D5 100%);
+            color: #FFFFFF;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '💕';
+            position: absolute;
+            font-size: 15em;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+        
+        .footer h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .hero p {
+                font-size: 1.1em;
+            }
+            
+            .teams {
+                flex-direction: column;
+            }
+            
+            .time-box {
+                min-width: 85px;
+                padding: 20px;
+            }
+            
+            .time-box .number {
+                font-size: 2.5em;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Confeti animado -->
+    <div id="confetti-container"></div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>🎈 Revelación de Sexo 🎈</h1>
+        <p>¡Acompáñanos a descubrir la sorpresa!</p>
+        <p style="margin-top: 10px; font-size: 1.2em;">✨ Un momento especial para compartir en familia ✨</p>
+        
+        <!-- Globos decorativos SVG mejorados -->
+        <svg class="balloon balloon-blue-1" width="70" height="90" viewBox="0 0 70 90" fill="none">
+            <ellipse cx="35" cy="35" rx="30" ry="35" fill="#A8D8FF" stroke="#8cc8ff" stroke-width="3"/>
+            <ellipse cx="35" cy="25" rx="15" ry="18" fill="#d4ebff" opacity="0.6"/>
+            <line x1="35" y1="70" x2="35" y2="90" stroke="#8cc8ff" stroke-width="2"/>
+            <path d="M 33 70 Q 25 80 20 90" stroke="#8cc8ff" stroke-width="2" fill="none"/>
+        </svg>
+        
+        <svg class="balloon balloon-pink-1" width="70" height="90" viewBox="0 0 70 90" fill="none">
+            <ellipse cx="35" cy="35" rx="30" ry="35" fill="#FFB7D5" stroke="#ff9fc4" stroke-width="3"/>
+            <ellipse cx="35" cy="25" rx="15" ry="18" fill="#ffd9ea" opacity="0.6"/>
+            <line x1="35" y1="70" x2="35" y2="90" stroke="#ff9fc4" stroke-width="2"/>
+            <path d="M 37 70 Q 45 80 50 90" stroke="#ff9fc4" stroke-width="2" fill="none"/>
+        </svg>
+        
+        <svg class="balloon balloon-blue-2" width="60" height="80" viewBox="0 0 60 80" fill="none">
+            <ellipse cx="30" cy="30" rx="25" ry="30" fill="#A8D8FF" stroke="#8cc8ff" stroke-width="2"/>
+            <ellipse cx="30" cy="22" rx="12" ry="15" fill="#d4ebff" opacity="0.6"/>
+            <line x1="30" y1="60" x2="30" y2="80" stroke="#8cc8ff" stroke-width="2"/>
+            <path d="M 28 60 Q 20 70 15 80" stroke="#8cc8ff" stroke-width="1.5" fill="none"/>
+        </svg>
+        
+        <svg class="balloon balloon-pink-2" width="60" height="80" viewBox="0 0 60 80" fill="none">
+            <ellipse cx="30" cy="30" rx="25" ry="30" fill="#FFB7D5" stroke="#ff9fc4" stroke-width="2"/>
+            <ellipse cx="30" cy="22" rx="12" ry="15" fill="#ffd9ea" opacity="0.6"/>
+            <line x1="30" y1="60" x2="30" y2="80" stroke="#ff9fc4" stroke-width="2"/>
+            <path d="M 32 60 Q 40 70 45 80" stroke="#ff9fc4" stroke-width="1.5" fill="none"/>
+        </svg>
+    </div>
+    
+    <div class="container">
+        <!-- Nombres de los padres -->
+        <div class="parents-names">
+            ✨ Gimena Díaz & Camilo Naranjo ✨
+        </div>
+        
+        <!-- Bienvenida -->
+        <div class="card">
+            <p class="welcome-text">
+                💙 Queremos compartir contigo un momento lleno de emoción, alegría y un poco de suspenso. 💗
+                <br><br>
+                <span class="question-mark">❓</span>
+                <strong>¿Team azul o team rosa?</strong>
+                <span class="question-mark">❓</span>
+                <br><br>
+                ¡Ven y descúbrelo con nosotros! 🎉
+            </p>
+        </div>
+        
+        <!-- Información del Evento -->
+        <div class="card event-info">
+            <h2 style="text-align: center; color: #D4B36A; margin-bottom: 35px; font-size: 2em;">
+                📋 Información del Evento 🎊
+            </h2>
+            
+            <div class="info-item">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="#D4B36A">
+                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="#D4B36A" stroke-width="2" fill="none"/>
+                    <line x1="3" y1="10" x2="21" y2="10" stroke="#D4B36A" stroke-width="2"/>
+                    <line x1="8" y1="2" x2="8" y2="6" stroke="#D4B36A" stroke-width="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6" stroke="#D4B36A" stroke-width="2"/>
+                </svg>
+                <div>
+                    <strong>📅 Fecha:</strong> Sábado 29 de noviembre de 2025
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="9" stroke="#D4B36A" stroke-width="2"/>
+                    <path d="M 12 6 L 12 12 L 16 14" stroke="#D4B36A" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div>
+                    <strong>⏰ Hora:</strong> 3:00 p. m. a 5:00 p. m.
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                    <path d="M 12 2 C 8 2 5 5 5 9 C 5 14 12 22 12 22 C 12 22 19 14 19 9 C 19 5 16 2 12 2 Z" stroke="#D4B36A" stroke-width="2" fill="none"/>
+                    <circle cx="12" cy="9" r="2.5" fill="#D4B36A"/>
+                </svg>
+                <div>
+                    <strong>📍 Lugar:</strong> Unidad residencial Surcos de Pangola – Portería 2, Jamundí, Valle
+                </div>
+            </div>
+            
+            <div style="margin: 25px 0;">
+                <div style="border: 3px solid #D4B36A; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); position: relative;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9515772667743!2d-76.54187682528773!3d3.276711296789287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e309f007872dc65%3A0x1783bc664b561e59!2sSurcos%20de%20Pangola%20porter%C3%ADa%202!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div style="position: absolute; top: 10px; right: 10px; background: white; padding: 8px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-weight: bold; color: #D4B36A; animation: pulse 2s ease-in-out infinite;">
+                        📍 ¡Aquí es!
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons-container">
+                <a href="https://www.google.com/maps/place/Surcos+de+Pangola+porter%C3%ADa+2/@3.2767167,-76.5418768,17z/data=!3m1!4b1!4m6!3m5!1s0x8e309f007872dc65:0x1783bc664b561e59!8m2!3d3.2767113!4d-76.5393019!16s%2Fg%2F11y6bj464p?entry=ttu&g_ep=EgoyMDI1MTExNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="button button-pink">
+                    <span>📍 Abrir en Google Maps</span>
+                </a>
+                <a href="https://www.waze.com/live-map/directions?to=ll.3.2767113%2C-76.5393019" target="_blank" class="button button-blue">
+                    <span>🚗 Abrir en Waze</span>
+                </a>
+            </div>
+            
+            <div class="info-item" style="justify-content: center; margin-top: 30px;">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="2" width="14" height="20" rx="2" stroke="#D4B36A" stroke-width="2"/>
+                    <line x1="9" y1="6" x2="15" y2="6" stroke="#D4B36A" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <div>
+                    <strong>📞 Contacto:</strong>
+                </div>
+            </div>
+            
+            <div class="buttons-container">
+                <a href="tel:+573207326673" class="button button-blue">
+                    <span>📞 Llamar: 320 732 6673</span>
+                </a>
+                <a href="https://wa.me/573207326673?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20revelaci%C3%B3n%20de%20sexo." target="_blank" class="button button-pink">
+                    <span>💬 WhatsApp</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Contador Regresivo -->
+        <div class="countdown">
+            <h2>⏰ ¡Cuenta Regresiva! ⏰</h2>
+            <div class="countdown-timer" id="countdown">
+                <div class="time-box">
+                    <div class="number" id="days">00</div>
+                    <div class="label">Días</div>
+                </div>
+                <div class="time-box">
+                    <div class="number" id="hours">00</div>
+                    <div class="label">Horas</div>
+                </div>
+                <div class="time-box">
+                    <div class="number" id="minutes">00</div>
+                    <div class="label">Minutos</div>
+                </div>
+                <div class="time-box">
+                    <div class="number" id="seconds">00</div>
+                    <div class="label">Segundos</div>
+                </div>
+            </div>
+            <h2 id="countdown-message" style="margin-top: 30px; display: none;"></h2>
+        </div>
+        
+        <!-- Teams -->
+        <div class="card">
+            <h2 style="text-align: center; color: #D4B36A; margin-bottom: 35px; font-size: 2em;">
+                🎨 ¿De qué equipo eres? 🎨
+            </h2>
+            
+            <div class="dress-code">
+                <strong style="font-size: 1.2em;">💙💗 Dress Code Opcional:</strong> 
+                <br><br>
+                ¡Puedes vestir del color del equipo que elijas! 
+                <strong style="color: #A8D8FF;">Azul</strong> si crees que será niño, 
+                <strong style="color: #FFB7D5;">rosa</strong> si crees que será niña. 🎀
+            </div>
+            
+            <div class="teams">
+                <div class="team team-blue">
+                    <h3>💙 Team Azul</h3>
+                    <p>Si crees que será niño...</p>
+                    <p style="font-size: 1.5em; margin-top: 15px;">👶🏻</p>
+                    <div class="team-icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="28" fill="#FFFFFF" opacity="0.4"/>
+                            <circle cx="40" cy="70" r="18" fill="#FFFFFF" opacity="0.4"/>
+                            <circle cx="68" cy="75" r="15" fill="#FFFFFF" opacity="0.4"/>
+                            <circle cx="50" cy="35" r="22" fill="#FFFFFF" opacity="0.3"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="team team-pink">
+                    <h3>💗 Team Rosa</h3>
+                    <p>Si crees que será niña...</p>
+                    <p style="font-size: 1.5em; margin-top: 15px;">👶🏻</p>
+                    <div class="team-icon">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="35" r="28" fill="#FFFFFF" opacity="0.4"/>
+                            <circle cx="40" cy="70" r="18" fill="#FFFFFF" opacity="0.4"/>
+                            <circle cx="68" cy="75" r="15" fill="#FFFFFF" opacity="0.4"/>
+                            <circle cx="50" cy="35" r="22" fill="#FFFFFF" opacity="0.3"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Banner Boy or Girl -->
+        <div style="text-align: center; margin: 50px 0; animation: fadeIn 2s ease-out;">
+            <svg width="320" height="120" viewBox="0 0 320 120">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#A8D8FF;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#D4B36A;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#FFB7D5;stop-opacity:1" />
+                    </linearGradient>
+                    <filter id="shadow">
+                        <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.3"/>
+                    </filter>
+                </defs>
+                <text x="160" y="55" font-size="42" font-weight="bold" text-anchor="middle" fill="url(#grad1)" filter="url(#shadow)" style="animation: pulse 2s ease-in-out infinite;">
+                    Boy or Girl?
+                </text>
+                <text x="160" y="85" font-size="26" text-anchor="middle" fill="#D4B36A" filter="url(#shadow)">
+                    ¡Pronto lo sabremos!
+                </text>
+                <circle cx="30" cy="30" r="8" fill="#A8D8FF" opacity="0.6">
+                    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="290" cy="30" r="8" fill="#FFB7D5" opacity="0.6">
+                    <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+                <circle cx="30" cy="90" r="6" fill="#FFB7D5" opacity="0.6">
+                    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite" begin="1s"/>
+                </circle>
+                <circle cx="290" cy="90" r="6" fill="#A8D8FF" opacity="0.6">
+                    <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+                </circle>
+            </svg>
+        </div>
+        
+        <!-- Votación Interactiva -->
+        <div class="card" style="background: linear-gradient(to bottom, #fffbf7 0%, #FFFFFF 100%);">
+            <h2 style="text-align: center; color: #D4B36A; margin-bottom: 35px; font-size: 2em;">
+                🗳️ ¿Qué crees que será? 🗳️
+            </h2>
+            <p style="text-align: center; font-size: 1.2em; margin-bottom: 30px; color: #666;">
+                ¡Deja tu nombre y tu predicción!
+            </p>
+            
+            <div id="vote-form" style="max-width: 500px; margin: 0 auto 30px auto;">
+                <input type="text" id="voter-name" placeholder="Tu nombre" style="width: 100%; padding: 15px; border: 2px solid #D4B36A; border-radius: 15px; font-size: 1.1em; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);" />
+            </div>
+            
+            <div style="display: flex; gap: 20px; margin: 30px 0; flex-wrap: wrap;">
+                <button id="vote-boy" class="vote-button" style="flex: 1; min-width: 200px; padding: 30px; border: 3px solid #A8D8FF; background: linear-gradient(135deg, #A8D8FF 0%, #d4ebff 100%); border-radius: 20px; cursor: pointer; font-size: 1.3em; font-weight: bold; color: #333; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(168, 216, 255, 0.3);">
+                    <div style="font-size: 3em; margin-bottom: 10px;">💙</div>
+                    <div>¡Es Niño!</div>
+                    <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">Haz clic para votar</div>
+                </button>
+                
+                <button id="vote-girl" class="vote-button" style="flex: 1; min-width: 200px; padding: 30px; border: 3px solid #FFB7D5; background: linear-gradient(135deg, #FFB7D5 0%, #ffd9ea 100%); border-radius: 20px; cursor: pointer; font-size: 1.3em; font-weight: bold; color: #333; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(255, 183, 213, 0.3);">
+                    <div style="font-size: 3em; margin-bottom: 10px;">💗</div>
+                    <div>¡Es Niña!</div>
+                    <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">Haz clic para votar</div>
+                </button>
+            </div>
+            
+            <div id="vote-results" style="margin-top: 40px; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; color: #D4B36A; margin-bottom: 25px; font-size: 1.5em;">
+                    📊 Resultados
+                </h3>
+                
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; color: #A8D8FF;">
+                        <span>💙 Niño</span>
+                        <span id="boy-percentage">0%</span>
+                    </div>
+                    <div style="background: #f0f0f0; height: 30px; border-radius: 15px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
+                        <div id="boy-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #A8D8FF 0%, #7cb8ff 100%); transition: width 0.5s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-weight: bold; font-size: 0.9em;"></div>
+                    </div>
+                </div>
+                
+                <div style="margin: 20px 0;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: bold; color: #FFB7D5;">
+                        <span>💗 Niña</span>
+                        <span id="girl-percentage">0%</span>
+                    </div>
+                    <div style="background: #f0f0f0; height: 30px; border-radius: 15px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);">
+                        <div id="girl-bar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #FFB7D5 0%, #ff8fb8 100%); transition: width 0.5s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px; color: white; font-weight: bold; font-size: 0.9em;"></div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 25px; padding-top: 20px; border-top: 2px dashed #D4B36A;">
+                    <div style="font-size: 1.2em; color: #666;">
+                        <strong>Total de votos:</strong> <span id="total-votes" style="color: #D4B36A; font-size: 1.3em; font-weight: bold;">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Muro de Votos -->
+            <div id="votes-wall" style="margin-top: 40px; padding: 30px; background: linear-gradient(to bottom, #fffbf7 0%, #FFFFFF 100%); border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h3 style="text-align: center; color: #D4B36A; margin-bottom: 25px; font-size: 1.5em;">
+                    💬 Muro de Predicciones
+                </h3>
+                <div id="votes-list" style="max-height: 400px; overflow-y: auto;">
+                    <p style="text-align: center; color: #999; font-style: italic;">Cargando predicciones...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <h3>🎊 Gracias por acompañarnos en este momento especial 💕</h3>
+        <p style="font-size: 1.5em; margin: 20px 0;">Gimena & Camilo</p>
+        <p style="margin-top: 25px; font-size: 1.2em;">📞 Contacto: 320 732 6673</p>
+        <div style="margin-top: 30px;">
+            <a href="tel:+573207326673" class="button button-blue" style="margin: 10px;">
+                <span>📞 Llamar</span>
+            </a>
+            <a href="https://wa.me/573207326673?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20revelaci%C3%B3n%20de%20sexo." target="_blank" class="button button-pink" style="margin: 10px;">
+                <span>💬 WhatsApp</span>
+            </a>
+            <a id="add-to-calendar" href="#" class="button" style="background: linear-gradient(135deg, #D4B36A 0%, #c9a855 100%); margin: 10px;">
+                <span>📅 Guardar en Google Calendar</span>
+            </a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.8;">
+            ✨ ¡Nos vemos pronto! ✨
+        </p>
+    </div>
+    
+    <script>
+        // CONFIGURACIÓN DE JSONBIN.IO
+        const JSONBIN_BIN_ID = 'TU_BIN_ID_AQUI'; // Reemplaza con tu Bin ID
+        const JSONBIN_API_KEY = 'TU_API_KEY_AQUI'; // Reemplaza con tu API Key
+        const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+        
+        // Crear confeti animado
+        function createConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#A8D8FF', '#FFB7D5', '#D4B36A'];
+            const confettiCount = 30;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                confetti.style.animationDelay = Math.random() * 5 + 's';
+                confetti.style.opacity = Math.random() * 0.5 + 0.3;
+                container.appendChild(confetti);
+            }
+        }
+        
+        createConfetti();
+        
+        // Función para obtener votos desde JSONBin
+        async function getVotesFromAPI() {
+            try {
+                const response = await fetch(JSONBIN_URL + '/latest', {
+                    method: 'GET',
+                    headers: {
+                        'X-Master-Key': JSONBIN_API_KEY
+                    }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.record || { votes: [] };
+                } else {
+                    return { votes: [] };
+                }
+            } catch (error) {
+                console.error('Error al obtener votos:', error);
+                return { votes: [] };
+            }
+        }
+        
+        // Función para guardar votos en JSONBin
+        async function saveVotesToAPI(votesData) {
+            try {
+                const response = await fetch(JSONBIN_URL, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Master-Key': JSONBIN_API_KEY
+                    },
+                    body: JSON.stringify(votesData)
+                });
+                
+                return response.ok;
+            } catch (error) {
+                console.error('Error al guardar votos:', error);
+                return false;
+            }
+        }
+        
+        // Función para renderizar el muro de votos
+        function renderVotesWall(votes) {
+            const votesList = document.getElementById('votes-list');
+            
+            if (!votes || votes.length === 0) {
+                votesList.innerHTML = '<p style="text-align: center; color: #999; font-style: italic;">¡Sé el primero en votar!</p>';
+                return;
+            }
+            
+            // Ordenar votos por fecha (más recientes primero)
+            votes.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+            
+            votesList.innerHTML = votes.map(vote => {
+                const color = vote.vote === 'boy' ? '#A8D8FF' : '#FFB7D5';
+                const icon = vote.vote === 'boy' ? '💙' : '💗';
+                const text = vote.vote === 'boy' ? 'Es niño' : 'Es niña';
+                const date = new Date(vote.timestamp);
+                const timeAgo = getTimeAgo(date);
+                
+                return `
+                    <div style="background: white; border-left: 4px solid ${color}; padding: 15px; margin: 10px 0; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); animation: fadeIn 0.5s ease;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 1.5em;">${icon}</span>
+                            <div style="flex: 1;">
+                                <strong style="color: ${color}; font-size: 1.1em;">${vote.name}</strong>
+                                <p style="margin: 5px 0 0 0; color: #666;">Cree que ${text}</p>
+                                <p style="margin: 5px 0 0 0; font-size: 0.85em; color: #999;">${timeAgo}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // Función para calcular "hace cuánto tiempo"
+        function getTimeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            
+            if (seconds < 60) return 'Hace unos segundos';
+            if (seconds < 3600) return `Hace ${Math.floor(seconds / 60)} minutos`;
+            if (seconds < 86400) return `Hace ${Math.floor(seconds / 3600)} horas`;
+            return `Hace ${Math.floor(seconds / 86400)} días`;
+        }
+        
+        // Función para actualizar la visualización de votos
+        function updateVoteDisplay(votes) {
+            const boyVotes = votes.filter(v => v.vote === 'boy').length;
+            const girlVotes = votes.filter(v => v.vote === 'girl').length;
+            const total = boyVotes + girlVotes;
+            
+            const boyPercentage = total > 0 ? Math.round((boyVotes / total) * 100) : 0;
+            const girlPercentage = total > 0 ? Math.round((girlVotes / total) * 100) : 0;
+            
+            document.getElementById('boy-percentage').textContent = boyPercentage + '%';
+            document.getElementById('girl-percentage').textContent = girlPercentage + '%';
+            document.getElementById('boy-bar').style.width = boyPercentage + '%';
+            document.getElementById('girl-bar').style.width = girlPercentage + '%';
+            document.getElementById('total-votes').textContent = total;
+            
+            if (boyPercentage > 15) {
+                document.getElementById('boy-bar').textContent = boyVotes;
+            } else {
+                document.getElementById('boy-bar').textContent = '';
+            }
+            
+            if (girlPercentage > 15) {
+                document.getElementById('girl-bar').textContent = girlVotes;
+            } else {
+                document.getElementById('girl-bar').textContent = '';
+            }
+            
+            renderVotesWall(votes);
+        }
+        
+        // Función para crear fuegos artificiales
+        function createFireworks(x, y, color) {
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'fixed';
+                particle.style.width = '8px';
+                particle.style.height = '8px';
+                particle.style.backgroundColor = color;
+                particle.style.borderRadius = '50%';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.pointerEvents = 'none';
+                particle.style.zIndex = '9999';
+                document.body.appendChild(particle);
+                
+                const angle = (Math.PI * 2 * i) / 15;
+                const velocity = 3 + Math.random() * 2;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                let px = x;
+                let py = y;
+                let opacity = 1;
+                
+                const animate = () => {
+                    px += vx;
+                    py += vy;
+                    opacity -= 0.02;
+                    
+                    particle.style.left = px + 'px';
+                    particle.style.top = py + 'px';
+                    particle.style.opacity = opacity;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        document.body.removeChild(particle);
+                    }
+                };
+                
+                animate();
+            }
+        }
+        
+        // Función para votar
+        async function vote(voteType) {
+            const nameInput = document.getElementById('voter-name');
+            const name = nameInput.value.trim();
+            
+            if (!name) {
+                alert('Por favor, ingresa tu nombre antes de votar 😊');
+                nameInput.focus();
+                return;
+            }
+            
+            // Obtener votos actuales
+            const data = await getVotesFromAPI();
+            const votes = data.votes || [];
+            
+            // Agregar nuevo voto
+            votes.push({
+                name: name,
+                vote: voteType,
+                timestamp: new Date().toISOString()
+            });
+            
+            // Guardar en la API
+            const saved = await saveVotesToAPI({ votes: votes });
+            
+            if (saved) {
+                // Actualizar visualización
+                updateVoteDisplay(votes);
+                
+                // Limpiar el campo de nombre
+                nameInput.value = '';
+                
+                // Mostrar mensaje de éxito
+                alert(`¡Gracias ${name}! Tu voto ha sido registrado 🎉`);
+                
+                // Scroll al muro de votos
+                document.getElementById('votes-wall').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                alert('Hubo un error al guardar tu voto. Por favor, verifica la configuración de JSONBin.');
+            }
+        }
+        
+        // Event listeners para votar
+        document.getElementById('vote-boy').addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            createFireworks(rect.left + rect.width / 2, rect.top + rect.height / 2, '#A8D8FF');
+            
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'bounce 0.5s ease';
+            }, 10);
+            
+            vote('boy');
+        });
+        
+        document.getElementById('vote-girl').addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            createFireworks(rect.left + rect.width / 2, rect.top + rect.height / 2, '#FFB7D5');
+            
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'bounce 0.5s ease';
+            }, 10);
+            
+            vote('girl');
+        });
+        
+        // Hover effects para botones de voto
+        document.querySelectorAll('.vote-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.08) translateY(-5px)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.3)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = '';
+            });
+        });
+        
+        // Cargar votos al inicio
+        async function loadVotes() {
+            const data = await getVotesFromAPI();
+            updateVoteDisplay(data.votes || []);
+        }
+        
+        loadVotes();
+        
+        // Recargar votos cada 30 segundos
+        setInterval(loadVotes, 30000);
+        
+        // Contador regresivo
+        const eventDate = new Date('November 29, 2025 15:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            if (distance < 0) {
+                document.getElementById('countdown').style.display = 'none';
+                const message = document.getElementById('countdown-message');
+                message.style.display = 'block';
+                message.innerHTML = '🎉🎊 ¡Es el gran día! 🎊🎉';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            
+            if (daysEl.textContent !== days.toString().padStart(2, '0')) {
+                daysEl.style.animation = 'none';
+                setTimeout(() => daysEl.style.animation = 'numberChange 0.5s ease', 10);
+            }
+            if (hoursEl.textContent !== hours.toString().padStart(2, '0')) {
+                hoursEl.style.animation = 'none';
+                setTimeout(() => hoursEl.style.animation = 'numberChange 0.5s ease', 10);
+            }
+            if (minutesEl.textContent !== minutes.toString().padStart(2, '0')) {
+                minutesEl.style.animation = 'none';
+                setTimeout(() => minutesEl.style.animation = 'numberChange 0.5s ease', 10);
+            }
+            if (secondsEl.textContent !== seconds.toString().padStart(2, '0')) {
+                secondsEl.style.animation = 'none';
+                setTimeout(() => secondsEl.style.animation = 'numberChange 0.5s ease', 10);
+            }
+            
+            daysEl.textContent = days.toString().padStart(2, '0');
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minutesEl.textContent = minutes.toString().padStart(2, '0');
+            secondsEl.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        // Efecto de clic en globos
+        document.querySelectorAll('.balloon').forEach(balloon => {
+            balloon.addEventListener('click', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = 'floatBalloon 8s ease-in-out infinite';
+                }, 10);
+            });
+        });
+        
+        // Efecto de clic en equipos
+        document.querySelectorAll('.team').forEach(team => {
+            team.addEventListener('click', function() {
+                this.style.transform = 'scale(1.05) rotate(2deg)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+            });
+        });
+        
+        // Botón de Google Calendar
+        document.getElementById('add-to-calendar').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const eventTitle = 'Revelación de Sexo - Gimena & Camilo';
+            const eventDetails = 'Un momento especial para compartir en familia. ¡Descubre si será niño o niña!';
+            const eventLocation = 'Unidad residencial Surcos de Pangola – Portería 2, Jamundí, Valle';
+            const startDate = '20251129T150000'; // 29 de noviembre 2025, 3:00 PM
+            const endDate = '20251129T170000'; // 29 de noviembre 2025, 5:00 PM
+            
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventTitle)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(eventDetails)}&location=${encodeURIComponent(eventLocation)}&sf=true&output=xml`;
+            
+            window.open(googleCalendarUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
