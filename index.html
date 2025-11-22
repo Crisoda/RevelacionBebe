@@ -650,30 +650,374 @@
             z-index: 1;
         }
         
-        @media (max-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 15px;
+            }
+            
             .hero h1 {
-                font-size: 2em;
+                font-size: 2.3em;
             }
             
             .hero p {
+                font-size: 1.2em;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8em;
+                line-height: 1.2;
+            }
+            
+            .hero p {
+                font-size: 1em;
+            }
+            
+            .parents-names {
+                font-size: 1.4em;
+                padding: 0 10px;
+            }
+            
+            .card {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .card::before,
+            .card::after {
+                font-size: 1.5em;
+                top: -10px;
+            }
+            
+            .welcome-text {
                 font-size: 1.1em;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            
+            .info-item svg {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .button {
+                padding: 15px 25px;
+                font-size: 1em;
+                width: 100%;
+                margin: 8px 0;
+            }
+            
+            .buttons-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .countdown {
+                padding: 35px 15px;
+            }
+            
+            .countdown h2 {
+                font-size: 1.6em;
+                margin-bottom: 25px;
+            }
+            
+            .countdown-timer {
+                gap: 15px;
+            }
+            
+            .time-box {
+                min-width: 70px;
+                padding: 15px 10px;
+            }
+            
+            .time-box .number {
+                font-size: 2.2em;
+            }
+            
+            .time-box .label {
+                font-size: 0.85em;
             }
             
             .teams {
                 flex-direction: column;
+                gap: 15px;
             }
             
-            .time-box {
-                min-width: 85px;
-                padding: 20px;
+            .team {
+                min-width: 100%;
+                padding: 25px;
             }
             
-            .time-box .number {
+            .team h3 {
+                font-size: 1.8em;
+            }
+            
+            .team p {
+                font-size: 1.1em;
+            }
+            
+            .dress-code {
+                padding: 18px;
+                font-size: 0.95em;
+            }
+            
+            #voter-name {
+                padding: 12px;
+                font-size: 1em;
+            }
+            
+            .vote-button {
+                min-width: 100%;
+                padding: 25px;
+                font-size: 1.1em;
+            }
+            
+            .vote-button > div:first-child {
                 font-size: 2.5em;
             }
             
+            #vote-results,
+            #votes-wall {
+                padding: 20px;
+            }
+            
+            #vote-results h3,
+            #votes-wall h3 {
+                font-size: 1.3em;
+            }
+            
+            #votes-list {
+                max-height: 300px;
+            }
+            
+            .footer {
+                padding: 35px 15px;
+            }
+            
+            .footer h3 {
+                font-size: 1.5em;
+            }
+            
+            .footer p {
+                font-size: 1em;
+            }
+            
+            .balloon {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            
+            .hero p {
+                font-size: 0.9em;
+            }
+            
+            .parents-names {
+                font-size: 1.2em;
+            }
+            
             .card {
-                padding: 25px;
+                padding: 15px;
+                border-width: 2px;
+            }
+            
+            .welcome-text {
+                font-size: 1em;
+            }
+            
+            .question-mark {
+                font-size: 1.2em;
+                margin: 0 5px;
+            }
+            
+            .info-item {
+                font-size: 1em;
+            }
+            
+            .info-item svg {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .button {
+                padding: 12px 20px;
+                font-size: 0.95em;
+            }
+            
+            .countdown h2 {
+                font-size: 1.3em;
+                margin-bottom: 20px;
+            }
+            
+            .countdown-timer {
+                gap: 10px;
+            }
+            
+            .time-box {
+                min-width: 65px;
+                padding: 12px 8px;
+            }
+            
+            .time-box .number {
+                font-size: 1.8em;
+            }
+            
+            .time-box .label {
+                font-size: 0.75em;
+            }
+            
+            .team {
+                padding: 20px;
+            }
+            
+            .team h3 {
+                font-size: 1.5em;
+            }
+            
+            .team p {
+                font-size: 1em;
+            }
+            
+            .team-icon svg {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .dress-code {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+            
+            #voter-name {
+                padding: 10px;
+                font-size: 0.95em;
+            }
+            
+            .vote-button {
+                padding: 20px;
+                font-size: 1em;
+            }
+            
+            .vote-button > div:first-child {
+                font-size: 2em;
+            }
+            
+            #vote-results,
+            #votes-wall {
+                padding: 15px;
+            }
+            
+            #vote-results h3,
+            #votes-wall h3 {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+            }
+            
+            .time-box .label,
+            #boy-percentage,
+            #girl-percentage,
+            #total-votes {
+                font-size: 0.9em;
+            }
+            
+            #votes-list > div {
+                padding: 12px;
+                font-size: 0.95em;
+            }
+            
+            #votes-list strong {
+                font-size: 1em;
+            }
+            
+            .footer h3 {
+                font-size: 1.3em;
+            }
+            
+            .footer p {
+                font-size: 0.95em;
+            }
+        }
+        
+        /* Landscape móvil */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h1 {
+                font-size: 1.5em;
+            }
+            
+            .hero p {
+                font-size: 0.9em;
+            }
+            
+            .countdown {
+                padding: 25px 15px;
+            }
+            
+            .countdown h2 {
+                font-size: 1.3em;
+                margin-bottom: 15px;
+            }
+            
+            .time-box {
+                padding: 10px;
+            }
+            
+            .card {
+                margin: 15px 0;
+            }
+        }
+        
+        /* Tablets en horizontal */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .countdown-timer {
+                gap: 20px;
+            }
+            
+            .time-box {
+                min-width: 95px;
+                padding: 22px;
+            }
+            
+            .time-box .number {
+                font-size: 2.8em;
+            }
+            
+            .teams {
+                gap: 20px;
+            }
+            
+            .team {
+                padding: 30px;
+            }
+            
+            .buttons-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .button {
+                width: auto;
+                min-width: 200px;
             }
         }
     </style>
@@ -729,7 +1073,9 @@
             <p class="welcome-text">
                 💙 Queremos compartir contigo un momento lleno de emoción, alegría y un poco de suspenso. 💗
                 <br><br>
+                <span class="question-mark">❓</span>
                 <strong>¿Team azul o team rosa?</strong>
+                <span class="question-mark">❓</span>
                 <br><br>
                 ¡Ven y descúbrelo con nosotros! 🎉
             </p>
@@ -775,16 +1121,16 @@
             
             <div style="margin: 25px 0;">
                 <div style="border: 3px solid #D4B36A; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15); position: relative;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9515772667743!2d-76.54187682528773!3d3.276711296789287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e309f007872dc65%3A0x1783bc664b561e59!2sSurcos%20de%20Pangola%20porter%C3%ADa%202!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0; display: block;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                    <div style="position: absolute; top: 10px; right: 10px; background: white; padding: 8px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-weight: bold; color: #D4B36A; animation: pulse 2s ease-in-out infinite;">
+                    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.9515772667743!2d-76.54187682528773!3d3.276711296789287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e309f007872dc65%3A0x1783bc664b561e59!2sSurcos%20de%20Pangola%20porter%C3%ADa%202!5e0!3m2!1ses!2sco!4v1234567890123!5m2!1ses!2sco" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div style="position: absolute; top: 10px; right: 10px; background: white; padding: 8px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-weight: bold; color: #D4B36A; animation: pulse 2s ease-in-out infinite; font-size: 0.9em; z-index: 10;">
                         📍 ¡Aquí es!
                     </div>
                 </div>
@@ -799,12 +1145,16 @@
                 </a>
             </div>
             
+            <div class="info-item" style="justify-content: center; margin-top: 30px;">
+                <svg width="35" height="35" viewBox="0 0 24 24" fill="none">
+                    <rect x="5" y="2" width="14" height="20" rx="2" stroke="#D4B36A" stroke-width="2"/>
+                    <line x1="9" y1="6" x2="15" y2="6" stroke="#D4B36A" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
+            
             <div class="buttons-container">
-                <a href="tel:+573207326673" class="button button-blue">
-                    <span>📞 Llamar: 320 732 6673</span>
-                </a>
                 <a href="https://wa.me/573207326673?text=Hola,%20confirmo%20mi%20asistencia%20a%20la%20revelaci%C3%B3n%20de%20sexo." target="_blank" class="button button-pink">
-                    <span>💬 WhatsApp</span>
+                    <span>💬 Confirmar asistencia</span>
                 </a>
             </div>
         </div>
@@ -849,8 +1199,8 @@
             
         
         <!-- Banner Boy or Girl -->
-        <div style="text-align: center; margin: 50px 0; animation: fadeIn 2s ease-out;">
-            <svg width="320" height="120" viewBox="0 0 320 120">
+        <div style="text-align: center; margin: 50px 0; animation: fadeIn 2s ease-out; overflow-x: hidden;">
+            <svg viewBox="0 0 320 120" style="width: 100%; max-width: 320px; height: auto;">
                 <defs>
                     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                         <stop offset="0%" style="stop-color:#A8D8FF;stop-opacity:1" />
@@ -957,11 +1307,11 @@
     <div class="footer">
         <h3>🎊 Gracias por acompañarnos en este momento especial 💕</h3>
         <p style="font-size: 1.5em; margin: 20px 0;">Gimena & Camilo</p>
-        <p style="margin-top: 25px; font-size: 1.2em;"></p>
+        <p style="margin-top: 25px; font-size: 1.2em;">📞 Contacto: 320 732 6673</p>
         <div style="margin-top: 30px;">
             <a href="tel:+573207326673" class="button button-blue" style="margin: 10px;">
                 <span>📞 Llamar</span>
-
+            </a>
             <a id="add-to-calendar" href="#" class="button" style="background: linear-gradient(135deg, #D4B36A 0%, #c9a855 100%); margin: 10px;">
                 <span>📅 Guardar en Google Calendar</span>
             </a>
@@ -1334,8 +1684,4 @@
         });
     </script>
 </body>
-
 </html>
-
-
-
